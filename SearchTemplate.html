@@ -252,11 +252,18 @@
             $(".chosen").chosen();
 			$('#datepicker1').datepicker();
 			$('#datepicker2').datepicker();
-			$('#btn-nav').hide();
+			$('#btn-nav').toggle();
 			$('#animate-click').click(function() {
 				$(this).each(function(){
-						$('#btn-nav').toggle();
-						$('#btn-nav').addClass("slideDown");
+						if ($('#btn-nav').is(":visible"))
+						{
+							$('#btn-nav').slideUp();
+						}
+						else
+						{
+							$('#btn-nav').toggle();
+							$('#btn-nav').addClass("slideDown");
+						}
 					});	
 				});
         });
